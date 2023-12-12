@@ -31,6 +31,12 @@ vim.defer_fn(function()
             "ssh_config",
         },
 
+        -- Fix indentation issue in python
+        indent = {
+            enable = true,
+            disable = "python",
+        },
+
         -- Autoinstall languages that are not installed
         auto_install = false,
 
