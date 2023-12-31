@@ -46,8 +46,6 @@ vim.defer_fn(function()
             -- Disable treesitter for some filetypes
             -- disable = { },
         },
-        -- Indent
-        indent = { enable = true },
         -- Incremental selection
         incremental_selection = {
             enable = true,
