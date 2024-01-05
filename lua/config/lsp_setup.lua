@@ -75,7 +75,6 @@ require("mason-lspconfig").setup()
 -- Enable the following language servers
 local servers = {
     clangd = {},
-    gopls = {},
     pyright = {},
     rust_analyzer = {},
     ruff_lsp = {},
