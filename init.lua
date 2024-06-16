@@ -1,3 +1,4 @@
+require("config.disable")
 require("config.leader")
 require("config.windows")
 require("config.lazy")
