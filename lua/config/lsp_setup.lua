@@ -76,8 +76,7 @@ require("mason-lspconfig").setup()
 local servers = {
     clangd = {},
     pyright = {},
-    rust_analyzer = {},
-    ruff_lsp = {},
+    ruff = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
