@@ -118,3 +118,11 @@ mason_lspconfig.setup_handlers {
         }
     end,
 }
+
+-- Rust
+vim.g.rustaceanvim = {
+    -- LSP configuration
+    server = {
+        on_attach = on_attach,
+    },
+}
