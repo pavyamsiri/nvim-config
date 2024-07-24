@@ -51,22 +51,17 @@ local on_attach = function(_, bufnr)
 end
 
 -- Register normal mode mappings for which-key
-require("which-key").register {
-    ["<leader>c"] = { name = "[c]ode", _ = "which_key_ignore" },
-    ["<leader>d"] = { name = "[d]ocument", _ = "which_key_ignore" },
-    ["<leader>g"] = { name = "[g]it", _ = "which_key_ignore" },
-    ["<leader>h"] = { name = "git [h]unk", _ = "which_key_ignore" },
-    ["<leader>r"] = { name = "[r]ename", _ = "which_key_ignore" },
-    ["<leader>s"] = { name = "[s]earch", _ = "which_key_ignore" },
-    ["<leader>t"] = { name = "[t]oggle", _ = "which_key_ignore" },
-    ["<leader>w"] = { name = "[w]orkspace", _ = "which_key_ignore" },
+require("which-key").add {
+    { "<leader>c", group = "[c]ode" },
+    { "<leader>d", group = "[d]ocument" },
+    { "<leader>g", group = "[g]it" },
+    { "<leader>h", group = "git [h]unk",      mode = { "n", "v" } },
+    { "<leader>r", group = "[r]ename" },
+    { "<leader>s", group = "[s]earch" },
+    { "<leader>t", group = "[t]oggle" },
+    { "<leader>w", group = "[w]orkspace" },
+    { "<leader>",  group = "VISUAL <leader>", mode = { "v" } },
 }
-
--- Register visual mode mappings for which-key
-require("which-key").register({
-    ["<leader>"] = { name = "VISUAL <leader>" },
-    ["<leader>h"] = { name = "git [h]unk", _ = "which_key_ignore" },
-}, { mode = "v" })
 
 -- Mason lsp config requires that setup is called in this order
 require("mason").setup()
