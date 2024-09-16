@@ -71,7 +71,6 @@ require("mason-lspconfig").setup()
 local servers = {
     clangd = {},
     pyright = {},
-    ruff = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -120,4 +119,11 @@ vim.g.rustaceanvim = {
     server = {
         on_attach = on_attach,
     },
+}
+
+require("lspconfig").ruff.setup {
+    cmd = { "ruff", "server" }, -- Replace with the correct executable name if necessary
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "python" },
 }
