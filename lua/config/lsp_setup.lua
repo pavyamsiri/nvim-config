@@ -70,7 +70,6 @@ require("mason-lspconfig").setup()
 -- Enable the following language servers
 local servers = {
     clangd = {},
-    pyright = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -123,6 +122,14 @@ vim.g.rustaceanvim = {
 
 require("lspconfig").ruff.setup {
     cmd = { "ruff", "server" }, -- Replace with the correct executable name if necessary
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "python" },
+}
+
+
+require("lspconfig").pyright.setup {
+    cmd = { "pyright-langserver", "--stdio" }, -- Replace with the correct executable name if necessary
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "python" },
