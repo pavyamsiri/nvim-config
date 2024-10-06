@@ -128,8 +128,8 @@ require("lspconfig").ruff.setup {
 }
 
 
-require("lspconfig").pyright.setup {
-    cmd = { "pyright-langserver", "--stdio" }, -- Replace with the correct executable name if necessary
+require("lspconfig").basedpyright.setup {
+    cmd = { "basedpyright-langserver", "--stdio" }, -- Replace with the correct executable name if necessary
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "python" },
